@@ -1,0 +1,1 @@
+Maize Cobs: A Dataset for DeepCob Analysis is under [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/) license.
