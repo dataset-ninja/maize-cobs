@@ -34,7 +34,7 @@ RELEASE_YEAR: int = 2021
 HOMEPAGE_URL: str = "https://zenodo.org/record/4587304#.Yk_ePH9Bzmg"
 # e.g. "https://some.com/dataset/homepage"
 
-PREVIEW_IMAGE_ID: int = 578971
+PREVIEW_IMAGE_ID: int = 1671450
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
 GITHUB_URL: str = "https://github.com/dataset-ninja/maize-cobs"
@@ -62,6 +62,13 @@ ORGANIZATION_NAME: Optional[Union[str, List[str]]] = ["University of Hohenheim, 
 ORGANIZATION_URL: Optional[Union[str, List[str]]] = [
     "https://www.uni-hohenheim.de/en/organization/institution/institute-of-plant-breeding-seed-science-and-population-genetics?tx_base_lsfcontentadmin%5Baction%5D=listLsfPublicationsOfLsfInstitution&cHash=bd559ee87a896ffd4afe80dd6dcd400c"
 ]
+SLYTAGSPLIT: Dict[str, List[str]] = {
+    "version": [
+        "ImgCross-training-data",
+        "ImgOldImgNew-training-data-1000",
+        "ImgOldImgNew-validation-data",
+    ]
+}
 TAGS: List[str] = None
 
 ##################################
@@ -98,6 +105,7 @@ def get_settings():
     settings["citation_url"] = CITATION_URL
     settings["organization_name"] = ORGANIZATION_NAME
     settings["organization_url"] = ORGANIZATION_URL
-    settings["tags"] = TAGS if TAGS is not None else []
+    settings["slytagsplit"] = SLYTAGSPLIT
+    settings["tags"] = TAGS
 
     return settings
