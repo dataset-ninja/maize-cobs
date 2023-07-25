@@ -2,6 +2,7 @@ from typing import Dict, List, Literal, Optional, Union
 
 from dataset_tools.templates import (
     AnnotationType,
+    Category,
     CVTask,
     Domain,
     Industry,
@@ -23,6 +24,8 @@ APPLICATIONS: List[Union[Industry, Domain, Research]] = [
     Industry.Agriculture(),
     Research.Genetic(),
 ]
+CATEGORY: Category = Category.Agriculture()
+
 CV_TASKS: List[CVTask] = [
     CVTask.InstanceSegmentation(),
     CVTask.SemanticSegmentation(),
@@ -30,7 +33,10 @@ CV_TASKS: List[CVTask] = [
 ]
 ANNOTATION_TYPES: List[AnnotationType] = [AnnotationType.InstanceSegmentation()]
 
-RELEASE_YEAR: int = 2021
+RELEASE_DATE: Optional[str] = "2021-03-08"  # e.g. "YYYY-MM-DD"
+if RELEASE_DATE is None:
+    RELEASE_YEAR: int = None
+
 HOMEPAGE_URL: str = "https://zenodo.org/record/4587304#.Yk_ePH9Bzmg"
 # e.g. "https://some.com/dataset/homepage"
 
@@ -57,7 +63,14 @@ CLASS2COLOR: Optional[Dict[str, List[str]]] = {
 # If specific colors for classes are needed, fill this dict (e.g. {"class1": [255, 0, 0], "class2": [0, 255, 0]})
 
 PAPER: Optional[str] = "https://plantmethods.biomedcentral.com/articles/10.1186/s13007-021-00787-6"
-CITATION_URL: Optional[str] = "https://zenodo.org/record/4587304#.Yk_ePH9Bzmg"
+CITATION_URL: Optional[str] = "https://zenodo.org/record/4587304/export/hx"
+AUTHORS: Optional[List[str]] = [
+    "Lydia Kienbaum",
+    "Miguel Correa Abondano",
+    "Raul Blas",
+    "Karl Schmid",
+]
+
 ORGANIZATION_NAME: Optional[Union[str, List[str]]] = ["University of Hohenheim, Germany"]
 ORGANIZATION_URL: Optional[Union[str, List[str]]] = [
     "https://www.uni-hohenheim.de/en/organization/institution/institute-of-plant-breeding-seed-science-and-population-genetics?tx_base_lsfcontentadmin%5Baction%5D=listLsfPublicationsOfLsfInstitution&cHash=bd559ee87a896ffd4afe80dd6dcd400c"
@@ -83,10 +96,15 @@ def check_names():
 
 
 def get_settings():
+    if RELEASE_DATE is not None:
+        global RELEASE_YEAR
+        RELEASE_YEAR = int(RELEASE_DATE.split("-")[0])
+
     settings = {
         "project_name": PROJECT_NAME,
         "license": LICENSE,
         "applications": APPLICATIONS,
+        "category": CATEGORY,
         "cv_tasks": CV_TASKS,
         "annotation_types": ANNOTATION_TYPES,
         "release_year": RELEASE_YEAR,
@@ -98,11 +116,13 @@ def get_settings():
     if any([field is None for field in settings.values()]):
         raise ValueError("Please fill all fields in settings.py after uploading to instance.")
 
+    settings["release_date"] = RELEASE_DATE
     settings["project_name_full"] = PROJECT_NAME_FULL or PROJECT_NAME
     settings["download_original_url"] = DOWNLOAD_ORIGINAL_URL
     settings["class2color"] = CLASS2COLOR
     settings["paper"] = PAPER
     settings["citation_url"] = CITATION_URL
+    settings["authors"] = AUTHORS
     settings["organization_name"] = ORGANIZATION_NAME
     settings["organization_url"] = ORGANIZATION_URL
     settings["slytagsplit"] = SLYTAGSPLIT

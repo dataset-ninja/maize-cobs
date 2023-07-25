@@ -1,6 +1,6 @@
 If you make use of the Maize Cobs data, please cite the following reference:
 
-``` bibtex
+```bibtex
 @misc{lydia_kienbaum_2021_4587304,
   author       = {Lydia Kienbaum and
                   Miguel Correa Abondano and
@@ -17,4 +17,4 @@ If you make use of the Maize Cobs data, please cite the following reference:
 }
 ```
 
-[🔗 Source](https://zenodo.org/record/4587304#.Yk_ePH9Bzmg)
+[🔗 Source](https://zenodo.org/record/4587304/export/hx)
