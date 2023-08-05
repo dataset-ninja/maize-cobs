@@ -21,10 +21,10 @@ PROJECT_NAME_FULL: str = "Maize Cobs: A Dataset for DeepCob Analysis"
 ##################################
 LICENSE: License = License.CC_BY_NC_2_0()
 APPLICATIONS: List[Union[Industry, Domain, Research]] = [
-    Industry.Agriculture(),
+    Industry.Agricultural(),
     Research.Genetic(),
 ]
-CATEGORY: Category = Category.Agriculture()
+CATEGORY: Category = Category.Agriculture(extra=Category.Biology())
 
 CV_TASKS: List[CVTask] = [
     CVTask.InstanceSegmentation(),

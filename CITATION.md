@@ -17,4 +17,4 @@ If you make use of the Maize Cobs data, please cite the following reference:
 }
 ```
 
-[🔗 Source](https://zenodo.org/record/4587304/export/hx)
+[Source](https://zenodo.org/record/4587304/export/hx)
