@@ -77,7 +77,7 @@ ORGANIZATION_URL: Optional[Union[str, List[str]]] = [
     "https://www.uni-hohenheim.de/en/organization/institution/institute-of-plant-breeding-seed-science-and-population-genetics?tx_base_lsfcontentadmin%5Baction%5D=listLsfPublicationsOfLsfInstitution&cHash=bd559ee87a896ffd4afe80dd6dcd400c"
 ]
 SLYTAGSPLIT: Dict[str, List[str]] = {
-    "version": [
+    "versions": [
         "ImgCross-training-data",
         "ImgOldImgNew-training-data-1000",
         "ImgOldImgNew-validation-data",
