@@ -1,6 +1,6 @@
 Dataset **Maize Cobs** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
 
- [Download](https://assets.supervisely.com/remote/eyJsaW5rIjogImZzOi8vYXNzZXRzLzEzNzdfTWFpemUgQ29icy9tYWl6ZS1jb2JzLURhdGFzZXROaW5qYS50YXIiLCAic2lnIjogIjVhVnhKR1Vvc0dTV2x3Sy96OVltOG53bmU1Q0ZIeEtzMXZuTkJhZkp0VkE9In0=)
+ [Download](https://assets.supervisely.com/remote/eyJsaW5rIjogInMzOi8vc3VwZXJ2aXNlbHktZGF0YXNldHMvMTM3N19NYWl6ZSBDb2JzL21haXplLWNvYnMtRGF0YXNldE5pbmphLnRhciIsICJzaWciOiAib0c2bjJ3aWcxYlFLNE5Ccm5pSkd3ZGkzUVVyTjhlMUxIcTFCMk5RaUlPWT0ifQ==?response-content-disposition=attachment%3B%20filename%3D%22maize-cobs-DatasetNinja.tar%22)
 
 As an alternative, it can be downloaded with *dataset-tools* package:
 ``` bash
